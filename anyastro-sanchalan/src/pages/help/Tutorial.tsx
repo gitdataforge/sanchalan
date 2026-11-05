@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { BookOpen, Briefcase, Folder, DollarSign, ShieldCheck, ArrowRight, ArrowLeft, Check } from "lucide-react";
@@ -11,32 +11,32 @@ export default function Tutorial() {
     {
       id: 0,
       icon: <BookOpen size={48} className="text-brand-blue mb-6" />,
-      title: "Welcome to Sanchalan",
-      description: "This is the central control room for AnyAstro. Here, you will manage all company work, money, and customer records securely in one place.",
+      title: t('welcome_title', "Welcome to Sanchalan"),
+      description: t('welcome_desc', "This is the central control room for AnyAstro. Here, you will manage all company work, money, and customer records securely in one place."),
     },
     {
       id: 1,
       icon: <Briefcase size={48} className="text-brand-blue mb-6" />,
-      title: "Managing Customers",
-      description: "Click on 'Work' in the left menu to add new customers. You can save their names, phone numbers, and the exact date you need to call them back.",
+      title: t('manage_customers', "Managing Customers"),
+      description: t('manage_customers_desc', "Click on 'Work' in the left menu to add new customers. You can save their names, phone numbers, and the exact date you need to call them back."),
     },
     {
       id: 2,
       icon: <Folder size={48} className="text-brand-blue mb-6" />,
-      title: "Tracking Projects",
-      description: "Use the 'Projects' screen to assign daily work to team members. Always set a delivery date so work is finished on time.",
+      title: t('track_projects', "Tracking Projects"),
+      description: t('track_projects_desc', "Use the 'Projects' screen to assign daily work to team members. Always set a delivery date so work is finished on time."),
     },
     {
       id: 3,
       icon: <DollarSign size={48} className="text-brand-blue mb-6" />,
-      title: "Recording Money",
-      description: "The 'Money' section tracks company income and expenses. Enter every payment received and every bill paid so the company cash balance is always correct.",
+      title: t('record_money', "Recording Money"),
+      description: t('record_money_desc', "The 'Money' section tracks company income and expenses. Enter every payment received and every bill paid so the company cash balance is always correct."),
     },
     {
       id: 4,
       icon: <ShieldCheck size={48} className="text-status-won mb-6" />,
-      title: "Keeping Data Safe",
-      description: "Go to 'Settings' at the end of your workday. Click 'Save Computer Backup' to lock a secure copy of all records on this machine.",
+      title: t('safe_data', "Keeping Data Safe"),
+      description: t('safe_data_desc', "Go to 'Settings' at the end of your workday. Click 'Save Computer Backup' to lock a secure copy of all records on this machine."),
     }
   ];
 
@@ -76,9 +76,9 @@ export default function Tutorial() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center pt-10">
       <div className="mb-8 text-center">
-        <h2 className="text-2xl font-semibold text-brand-white">Training Guide</h2>
+        <h2 className="text-2xl font-semibold text-brand-white">{t('training_guide', 'Training Guide')}</h2>
         <p className="text-sm text-brand-silver mt-1">
-          Learn how to operate the AnyAstro workspace.
+          {t('training_sub', 'Learn how to operate the AnyAstro workspace.')}
         </p>
       </div>
 
@@ -124,7 +124,7 @@ export default function Tutorial() {
             className="flex items-center gap-2 px-4 py-2 text-sm text-brand-silver hover:text-brand-white disabled:opacity-30 transition-colors"
           >
             <ArrowLeft size={16} />
-            Previous
+            {t('previous', 'Previous')}
           </button>
           
           <div className="flex gap-2">
@@ -141,7 +141,7 @@ export default function Tutorial() {
               onClick={handleFinish}
               className="flex items-center gap-2 px-6 py-2 text-sm font-medium bg-status-won text-brand-white rounded hover:bg-opacity-90 transition-colors"
             >
-              Finish
+              {t('finish', 'Finish')}
               <Check size={16} />
             </button>
           ) : (
@@ -149,7 +149,7 @@ export default function Tutorial() {
               onClick={handleNext}
               className="flex items-center gap-2 px-6 py-2 text-sm font-medium bg-brand-blue text-brand-white rounded hover:bg-brand-blueHover transition-colors"
             >
-              Next
+              {t('next', 'Next')}
               <ArrowRight size={16} />
             </button>
           )}
