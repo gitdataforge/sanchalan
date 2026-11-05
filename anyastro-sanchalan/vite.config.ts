@@ -29,4 +29,14 @@ export default defineConfig(() => ({
       ignored: ["**/src-tauri/**"],
     },
   },
+  
+  // Tauri Windows specific build optimization
+  build: {
+    // Windows WebView2 requires chrome105 compatibility
+    target: process.env.TAURI_ENV_PLATFORM == 'windows' ? 'chrome105' : 'esnext',
+    // Compress code for performance unless debugging
+    minify: !process.env.TAURI_ENV_DEBUG ? 'esbuild' : false,
+    // Provide error maps only during testing
+    sourcemap: !!process.env.TAURI_ENV_DEBUG,
+  },
 }));
