@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "anyastro-sanchalan",
+  "productName": "AnyAstro Sanchalan",
   "version": "0.1.0",
   "identifier": "com.codespace.anyastro-sanchalan",
   "build": {
@@ -12,13 +12,13 @@
   "app": {
     "windows": [
       {
-        "title": "anyastro-sanchalan",
-        "width": 800,
-        "height": 600
+        "title": "AnyAstro Sanchalan",
+        "width": 1280,
+        "height": 800
       }
     ],
     "security": {
-      "csp": null
+      "csp": "default-src 'self'; img-src 'self' asset: https:; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' ipc: http://localhost:* ws://localhost:* https://*.firebaseio.com https://*.googleapis.com;"
     }
   },
   "bundle": {
