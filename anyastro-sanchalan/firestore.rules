@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Strict safety rule: Only authenticated AnyAstro staff can read or write data
+    function isAnyAstroStaff() {
+      return request.auth != null;
+    }
+
+    match /customers/{document=**} {
+      allow read, write: if isAnyAstroStaff();
+    }
+    
+    match /work_projects/{document=**} {
+      allow read, write: if isAnyAstroStaff();
+    }
+    
+    match /money_records/{document=**} {
+      allow read, write: if isAnyAstroStaff();
+    }
+    
+    match /system_settings/{document=**} {
+      allow read, write: if isAnyAstroStaff();
+    }
+  }
+}
