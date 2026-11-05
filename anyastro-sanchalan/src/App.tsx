@@ -5,6 +5,7 @@ import LeadManager from "./pages/crm/LeadManager";
 import FinanceOverview from "./pages/finance/FinanceOverview";
 import ProjectManager from "./pages/projects/ProjectManager";
 import Tutorial from "./pages/help/Tutorial";
+import Settings from "./pages/settings/Settings";
 import "./App.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/projects" element={<ProjectManager />} />
         <Route path="/money" element={<FinanceOverview />} />
         <Route path="/help" element={<Tutorial />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </MainLayout>
   );
