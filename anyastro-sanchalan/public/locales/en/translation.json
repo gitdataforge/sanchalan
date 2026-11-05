@@ -1,0 +1,9 @@
+{
+  "dashboard": "Home",
+  "business": "Work",
+  "projects": "Projects",
+  "finance": "Money",
+  "security": "Safety",
+  "settings": "Settings",
+  "new_record": "Add New"
+}
